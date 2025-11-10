@@ -44,3 +44,8 @@ class Library:
 
     def search_book(self, title=None, auther=None):
         pass
+
+
+    def reset_library(self, users, books):
+        self.users_list = users
+        self.books_list = books

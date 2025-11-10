@@ -1,3 +1,9 @@
+import moduls.user as us
+import moduls.book as bk
+import moduls.library as lb
+from service import file_handling as fh
+
+
 def main():
     menu = """ 
             1) 
@@ -7,23 +13,24 @@ def main():
             5)
             """
     ask_user = input(menu)
-    library = Library()
 
-    read_books() # service to library
-    read_users() # service to library
+    users = fh.read_file('user', us.User) # service to library
+    books = fh.read_users('book', bk.Book) # service to library
     
-    reset_library(read_books, read_users)
+    library = lb.Library()
+    library.reset_library(users, books)
     
+
     while ask_user != '5':
         
         match ask_user:
             case '1':
                 create_user()            # user to library      add_to_library()  # library
-                update_file(file='user') # service
+                fh.update_file(file='user') # service
             
             case '2':
                 add_book()               # book  -> add_to_library
-                update_file(file='book') # service 
+                fh.update_file(file='book') # service 
             
             case '3':                    # to borrow a book: 
                 choose_user_and_book()   # validation - from library      
