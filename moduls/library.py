@@ -1,3 +1,7 @@
+import uuid
+import user as us
+import book as bk
+
 
 class Library:
     def __init__(self, ):
@@ -28,17 +32,14 @@ class Library:
         return book, user
 
 
-    def borrow_book(self, user_id, book_isbn):
-        book, user = self.find_user_and_book(user_id, book_isbn)
+    def borrow_book(self, user, book):
         book.is_available = False
         user.add_borrowed_book(book)
         return True
     
     
-    def return_book(self, user_id, book_isbn):
-        book, user = self.find_user_and_book(user_id, book_isbn)
+    def return_book(self, book):
         book.is_available = True
-        
         return True
 
 
@@ -49,3 +50,25 @@ class Library:
     def reset_library(self, users, books):
         self.users_list = users
         self.books_list = books
+
+    def choose_user_and_book(self):
+        user = input('Prase your name: ')
+        book = input('Prase book title or auther: ')
+        
+        return self.find_user_and_book(user, book) # get objects of user and book
+
+
+def create_user():
+    """ respons name of user and create User object """
+    name = input('Enter your name: ')
+    id = uuid.uuid4()
+    user = us.User(name, id)
+    return user
+
+
+def create_book():
+    title = input('Enter the book title: ')
+    auther = input('Enter the book auther: ')
+    isbn = uuid.uuid4()
+    book = bk.Book(title, auther, isbn)
+    return book
