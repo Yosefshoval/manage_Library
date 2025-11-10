@@ -1,6 +1,9 @@
 import uuid
-import user as us
-import book as bk
+# import user as us
+# import book as bk     
+import moduls.user as us
+import moduls.book as bk    
+
 
 
 class Library:
@@ -18,25 +21,26 @@ class Library:
     
 
     def find_user_and_book(self, user_id, book_isbn):
-        valid_user = map(lambda u: u.id == user_id, self.users_list)
-        user = next(valid_user, None)
+        for current_user in self.users_list:
+            if current_user.id == user_id:
+                user = current_user
+                break
         
-        valid_book = map(lambda b: b.isbn == book_isbn, self.books_list)
-        book = next(valid_book, None)
+        book = None
+        for currebt_book in self.books_list:
+            if currebt_book.isbn == book_isbn:
+                book = currebt_book
+                break
+        # valid_user = map(lambda u: u.id == user_id, self.users_list)
+        # user = next(valid_user, None)
+        
+        # valid_book = map(lambda b: b.isbn == book_isbn, self.books_list)
+        # book = next(valid_book, None)
         
         return book, user
 
         
-        # for current_user in self.users_list:
-        #     if current_user.id == user_id:
-        #         user = current_user
-                # break
         
-        # book = None
-        # for currebt_book in self.books_list:
-        #     if currebt_book.isbn == book_isbn:
-        #         book = currebt_book
-        #         break
         
 
 

@@ -12,17 +12,17 @@ def main():
             4) return book
             5) Exit.
             """
-
+# Loading users and books from files
     users = fh.FileHandler.read_file('user', us.User)   # service to library
-    books = fh.FileHandler.read_users('book', bk.Book)  # service to library
+    books = fh.FileHandler.read_file('book', bk.Book)  # service to library
     
     library = lb.Library()
     library.reset_library(users, books)
     
-    ask_user = None
+    # print menu and get user choice
+    ask_user = input(menu)
 
     while ask_user != '5':
-        ask_user = input(menu)
         
         match ask_user:
             case '1':
@@ -66,3 +66,6 @@ def main():
                 continue
 
     print('See you next time!!!')
+
+if __name__ == '__main__':
+    main()
