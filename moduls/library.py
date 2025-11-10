@@ -1,3 +1,7 @@
+import uuid
+import user as us
+import book as bk
+
 
 class Library:
     def __init__(self, ):
@@ -16,8 +20,10 @@ class Library:
     def find_user_and_book(self, user_id, book_isbn):
         valid_user = map(lambda u: u.id == user_id, self.users_list)
         user = next(valid_user, None)
+        
         valid_book = map(lambda b: b.isbn == book_isbn, self.books_list)
         book = next(valid_book, None)
+        
         return book, user
 
         
@@ -34,26 +40,26 @@ class Library:
         
 
 
-    def borrow_book(self, user_id, book_isbn):
-        book, user = self.find_user_and_book(user_id, book_isbn)
+    def borrow_book(self, user, book):
         book.is_available = False
         user.add_borrowed_book(book)
         return True
     
     
-    def return_book(self, user_id, book_isbn):
-        book, user = self.find_user_and_book(user_id, book_isbn)
+    def return_book(self, book):
         book.is_available = True
-        
         return True
 
 
-    def search_book(self, title, auther):
+    def search_book(self, title=None, auther=None):
         results = []
-        for book in self.books_list:
-            results.extend(book for book in self.books_list if book.title.lower() == title.lower() or book.auther.lower() == auther.lower())
+        
+        results.extend(book for book in self.books_list if book.title.lower() == title.lower() 
+                       or book.auther.lower() == auther.lower())
+        
         if not results:
             return None   
+        
         return results
         
 
@@ -61,3 +67,26 @@ class Library:
     def reset_library(self, users, books):
         self.users_list = users
         self.books_list = books
+
+
+    def choose_user_and_book(self):
+        user = input('Prase your name: ')
+        book = input('Prase book title or auther: ')
+        
+        return self.find_user_and_book(user, book) # get objects of user and book
+
+
+def create_user():
+    """ respons name of user and create User object """
+    name = input('Enter your name: ')
+    id = uuid.uuid4()
+    user = us.User(name, id)
+    return user
+
+
+def create_book():
+    title = input('Enter the book title: ')
+    auther = input('Enter the book auther: ')
+    isbn = uuid.uuid4()
+    book = bk.Book(title, auther, isbn)
+    return book

@@ -1,7 +1,10 @@
 class User:
-    pass
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+        self.borrowed_books = []
+    
+    
 
 
 
-def create_user():
-    pass
