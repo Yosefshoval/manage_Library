@@ -62,10 +62,11 @@ def main():
                 fh.FileHandler.update_file(library.books_list, 'book') # service -> update in file - the book is available
 
             case _:
-                ask_user = input('Try again please: ')
+                print('Try again please: ')
                 continue
 
     print('See you next time!!!')
+
 
 if __name__ == '__main__':
     main()

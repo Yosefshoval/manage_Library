@@ -1,4 +1,8 @@
 import json
+from pathlib import Path
+
+filePache = Path(__file__).resolve().parent.parent
+print(filePache)
 
 class FileHandler:
     
@@ -10,7 +14,7 @@ class FileHandler:
    
             json_data = json.dumps(dict_data, indent=3)
 
-            with open(f'../data/{filename}.json', 'w') as file:
+            with open(f'{filePache}/data/{filename}.json', 'w') as file:
                 file.write(json_data)
 
         except Exception as e:
@@ -20,8 +24,10 @@ class FileHandler:
     def read_file(data_type, object):
         try:
             list_class = []
-            with open(f"../data/{data_type}.json", 'r') as file:
+            with open(f"{filePache}/data/{data_type}.json", 'r') as file:
                 dict_file = json.load(file)
+                if not dict_file:
+                    print(f'There is no contennt in {data_type}')
                 for item in dict_file:
                     list_class.append(object(**item))
             return list_class
