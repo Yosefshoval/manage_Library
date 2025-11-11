@@ -5,9 +5,9 @@ import moduls.book as bk
 
 
 class Library:
-    def __init__(self, ):
-        self.users_list = []
-        self.books_list = []
+    def __init__(self, users_list=[], books_list=[]):
+        self.users_list = users_list
+        self.books_list = books_list
     
     
     def add_book(self, book):
@@ -30,7 +30,8 @@ class Library:
             if currebt_book.isbn == book_isbn:
                 book = currebt_book
                 break
-        return user, book        
+        
+        return (user, book)
 
 
     def borrow_book(self, user, book):
@@ -44,16 +45,18 @@ class Library:
         return True
 
 
-    def search_book(self, title=None, auther=None):
+    def search_book(self, title='None', author='None'):
         results = []
         
         results.extend(book for book in self.books_list if book.title.lower() == title.lower() 
-                       or book.auther.lower() == auther.lower())
+                       or book.author.lower() == author.lower())
         
         if not results:
             return None   
         
-        return results
+        result = list(map(lambda item : str(item), results))
+        
+        return result
         
 
 
@@ -69,11 +72,14 @@ class Library:
         return self.find_user_and_book(user, book) # get objects of user and book
 
 
+
+        
+
 def create_user():
     """ respons name of user and create User object """
     name = input('Enter your name: ')
     id = uuid.uuid4()
-    user = us.User(name, id)
+    user = us.User(name, str(id))
     return user
 
 
@@ -81,5 +87,5 @@ def create_book():
     title = input('Enter the book title: ')
     auther = input('Enter the book auther: ')
     isbn = uuid.uuid4()
-    book = bk.Book(title, auther, isbn)
+    book = bk.Book(title, auther, str(isbn))
     return book

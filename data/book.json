@@ -1,0 +1,68 @@
+[
+   {
+      "title": "1984",
+      "author": "George Orwell",
+      "isbn": "9780451524935",
+      "is_available": true
+   },
+   {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780547928227",
+      "is_available": true
+   },
+   {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "9780060935467",
+      "is_available": true
+   },
+   {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isbn": "9780141439518",
+      "is_available": true
+   },
+   {
+      "title": "Jane Eyre",
+      "author": "Charlotte Bront\u00c3\u00ab",
+      "isbn": "9780141441146",
+      "is_available": true
+   },
+   {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "is_available": true
+   },
+   {
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "isbn": "9781503280786",
+      "is_available": true
+   },
+   {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "isbn": "9780060850524",
+      "is_available": true
+   },
+   {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "isbn": "9780316769488",
+      "is_available": true
+   },
+   {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "isbn": "9781451673319",
+      "is_available": true
+   },
+   {
+      "title": "home",
+      "author": "jon Jon",
+      "isbn": "dc5e277b-79d1-4232-90bd-6e351fee85fa",
+      "is_available": true
+   }
+]

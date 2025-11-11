@@ -1,0 +1,74 @@
+[
+   {
+      "name": "John Smith",
+      "id": 1,
+      "borrowed_books": [
+         "1984",
+         "The Hobbit"
+      ]
+   },
+   {
+      "name": "Emily Johnson",
+      "id": 2,
+      "borrowed_books": [
+         "To Kill a Mockingbird"
+      ]
+   },
+   {
+      "name": "Michael Brown",
+      "id": 3,
+      "borrowed_books": []
+   },
+   {
+      "name": "Sarah Davis",
+      "id": 4,
+      "borrowed_books": [
+         "Pride and Prejudice",
+         "Jane Eyre"
+      ]
+   },
+   {
+      "name": "David Wilson",
+      "id": 5,
+      "borrowed_books": []
+   },
+   {
+      "name": "Olivia Miller",
+      "id": 6,
+      "borrowed_books": [
+         "The Great Gatsby"
+      ]
+   },
+   {
+      "name": "Daniel Taylor",
+      "id": 7,
+      "borrowed_books": []
+   },
+   {
+      "name": "Sophia Anderson",
+      "id": 8,
+      "borrowed_books": []
+   },
+   {
+      "name": "James Thomas",
+      "id": 9,
+      "borrowed_books": [
+         "Moby Dick"
+      ]
+   },
+   {
+      "name": "Emma Moore",
+      "id": 10,
+      "borrowed_books": []
+   },
+   {
+      "name": "Yosef",
+      "id": "add6c052-e30c-4876-b91e-19d2ea1b66e1",
+      "borrowed_books": []
+   },
+   {
+      "name": "Yosef",
+      "id": "566da922-899a-4a42-891e-b610bf2fa776",
+      "borrowed_books": []
+   }
+]
