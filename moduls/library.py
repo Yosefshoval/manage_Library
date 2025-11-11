@@ -32,7 +32,6 @@ class Library:
                 break
         
         return (user, book)
-        
 
 
     def borrow_book(self, user, book):
