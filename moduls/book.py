@@ -8,6 +8,3 @@ class Book:
     def __str__(self):
         return f"Title: {self.title}, Author: {self.author}, ISBN: {self.isbn}, Available: {self.is_available}"
     
-
-def a():
-    pass
