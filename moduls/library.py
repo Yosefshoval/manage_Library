@@ -58,8 +58,8 @@ class Library:
 
 
     def reset_library(self, users, books):
-        self.users_list = users
-        self.books_list = books
+        self.users_list = users if users is not None else []
+        self.books_list = books if books is not None else []
 
 
     def choose_user_and_book(self):
