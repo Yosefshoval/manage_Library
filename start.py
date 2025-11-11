@@ -40,6 +40,11 @@ def main():
                 
                 if choose[0] and choose[1]:
                     user, book = choose[0], choose[1]
+                    
+                    if not book.is_available:
+                        print("You can't borrow this book, it unavailable.")
+                        continue
+                
                 else:
                     print('User or Book not found.')
                     continue
@@ -52,6 +57,10 @@ def main():
                 
                 if choose[0] and choose[1]:
                     user, book = choose[0], choose[1]
+                    
+                    if book not in user.borrowed_books:
+                        print("You don't borrowed this book.")
+                        continue
                 else:
                     print('Try again')
                     ask_user = input(menu)
