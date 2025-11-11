@@ -14,7 +14,7 @@ def main():
             """
 
     users = fh.FileHandler.read_file('user', us.User)   # service to library
-    books = fh.FileHandler.read_users('book', bk.Book)  # service to library
+    books = fh.FileHandler.read_file('book', bk.Book)  # service to library
     
     library = lb.Library()
     library.reset_library(users, books)
@@ -62,7 +62,11 @@ def main():
                 fh.FileHandler.update_file(library.books_list, 'book') # service -> update in file - the book is available
 
             case _:
-                ask_user = input('Try again please: ')
+                print('Try again please: ')
                 continue
 
     print('See you next time!!!')
+
+
+if __name__ == '__main__':
+    main()
