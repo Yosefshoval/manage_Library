@@ -1,6 +1,7 @@
 import uuid
+     
 import moduls.user as us
-import moduls.book as bk
+import moduls.book as bk    
 
 
 class Library:
@@ -18,14 +19,6 @@ class Library:
     
 
     def find_user_and_book(self, user_id, book_isbn):
-        # valid_user = map(lambda u: u.id == user_id, self.users_list)
-        # user = next(valid_user, None)
-        
-        # valid_book = map(lambda b: b.isbn == book_isbn, self.books_list)
-        # book = next(valid_book, None)
-        
-        # 
-
         user = None
         for current_user in self.users_list:
             if current_user.id == user_id:
@@ -39,6 +32,11 @@ class Library:
                 break
         
         return book, user
+
+        
+        
+        
+        
 
 
     def borrow_book(self, user, book):
